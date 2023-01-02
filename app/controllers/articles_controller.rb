@@ -22,8 +22,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
-    render json: @article
+      @article.destroy
+      render json: @article
     #Il est recommandé de renvoyer un code HTTP 204 (No Content)
     #head :no_content
   end
