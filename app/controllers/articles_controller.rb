@@ -5,9 +5,13 @@ class ArticlesController < ApplicationController
     render json: @articles
   end
 
-  def new
-    @article = Article.new
-    render json: @article
+  def create
+    @article = Article.new(article_params)
+    if @article.save
+      render json: @article, status: :created
+    else
+      render json @article.errors, status: :unprocessable_entity
+    end
   end
 
   def show
