@@ -1,0 +1,7 @@
+<h1>Liste des commentaires</h1>
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= article.titre %></li>
+    <li><%= article.commentaires %></li>
+  <% end %>
+</ul>
